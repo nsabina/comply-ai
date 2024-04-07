@@ -13,6 +13,7 @@ image = modal.Image.debian_slim(
     "langchain",
     "openai",
     "langchain-openai",
+    "langchain_anthropic",
     "faiss-gpu",
     "pymongo[srv]==3.12",
     "gradio==3.50.2",
@@ -73,7 +74,8 @@ def qanda(query: str, request_id=None) -> str:
         request_id: A unique identifier for the request.
     """
     from langchain.chains.qa_with_sources import load_qa_with_sources_chain
-    from langchain_openai import ChatOpenAI
+    #from langchain_openai import ChatOpenAI
+    from langchain_anthropic import ChatAnthropic
 
     import vecstore, prompts
 
@@ -94,7 +96,8 @@ def qanda(query: str, request_id=None) -> str:
 
     pretty_log("running query against Q&A chain")
 
-    llm = ChatOpenAI(model_name="gpt-4-turbo-preview", temperature=0.0, max_tokens=300)
+    #llm = ChatOpenAI(model_name="gpt-4-turbo-preview", temperature=0.0, max_tokens=300)
+    llm = ChatAnthropic(temperature=0, model="claude-3-sonnet-20240229", verbose=True)
     chain = load_qa_with_sources_chain(
         llm,
         chain_type="stuff",
@@ -231,19 +234,33 @@ def fastapi_app():
         outputs=outputs,
         examples=[
             "What are the key objectives of the GDPR?",
+            "What organization’s AI management system shall include?"
             "How does SOC2 define confidentiality?",
+            "Каковы основные цели GDPR?",
+            "How does organization perform AI risk management?",
             "What are the requirements for obtaining ISO/IEC 27001 certification?",
             "What is ISO/IEC 27001 about?",
+            "Comment une entreprise peut-elle se conformer au RGPD?",
             "How does GDPR address data subject rights?",
+            "In layman's terms, explain what do I need to do to be ISO 27001 certified?"
             "What types of organizations should comply with SOC2?",
+            "组织在发生个人数据泄露时应如何应对",
             "What are the main elements of an ISO/IEC 27001 Information Security Management System (ISMS)?",
             "How is personal data defined?",
+            "What kind of audit should a company undergo to show its compliance with GDPR?"
             "What are the SOC2 trust service criteria?",
+            "What’s the difference between TSC and TSP?",
+            "एक कंपनी GDPR का पालन कैसे कर सकती है?",
             "What is the scope of ISO/IEC 27001's information security standards?",
             "How does SOC2 address confidentiality and privacy?",
+            "How can one decide if they need SOC 2 or ISO 27001 report?",
             "What are the continuous improvement requirements in ISO/IEC 27001?",
             "What are the implications of GDPR for data processors and controllers?",
-            "Каковы основные цели GDPR?"
+            "What’s the difference between ISO 27001 and 27701?",
+            "What is the difference between accredited and unaccredited ISO certifications?",
+            "Can I have ISO 27701 without 27001?",
+            ""
+
         ],
         allow_flagging="never",
         theme=gr.themes.Glass(radius_size="none", text_size="lg"),

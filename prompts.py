@@ -9,6 +9,7 @@ Given chunks from multiple documents and a question, create an answer to the que
 - If the answer cannot be determined from the chunks or from these instructions, the system should not answer the question. The system should instead return "The provided documents do not explicitly answer your question".
 - Chunks are taken from the middle of documents and may be truncated or missing context.
 - Documents are not guaranteed to be relevant to the question.
+- Do not make sentences too long, simplify the response, keep readability at level 8-10
 - Do not show full source URL in the answer. only document title.
 
 QUESTION: How does SOC2 define the principle of Security?
