@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compliance Simplified</title>
+    <style>
+        body,html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-image: url('cyber-background.jpeg');
+            background-size: cover;
+            text-align: center;
+            font-family: 'Roboto', sans-serif; 
+            color: #9fadb3; 
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.3); /* Adjust for desired transparency level */
+            padding: 10px;
+            border-radius: 8px;
+            #box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px; /* Adjust based on your layout needs */
+            border: none;
+        }
+        /* Style the iframe to take up all available space */
+        iframe {
+		    display: block;
+            width: 90%;
+            height: 90%; 
+            border: none; /* Remove iframe border */
+            transform: scale(0.9); /* Scale iframe to 90% */
+            transform-origin: top; /* Scale from the top */
+            background-color: rgba(229, 240, 244, 0.8); /* Adjust for desired transparency level */
+        }
+        link { color: #91a1a8; }
+    </style>
+</head>
+<body>
+    <div class="container">
+	    <h1>Compliance Simplified</h1>
+        <p>Ask me what you want to know about security and privacy compliance (in any language)</p>
+        <p>
+            <a id="link" href="https://www.aicpa-cima.com/resources/download/get-description-criteria-for-your-organizations-soc-2-r-report">2018 SOC 2 Description Criteria</a>  |  
+            <a id="link" href="https://www.iso.org/standard/27001">ISO/IEC 27001 (2022)</a>  |  
+            <a id="link" href="https://www.iso.org/standard/81230.html">ISO/IEC 42001 (2023)</a>
+            <a id="link" href="https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679">GDPR (2016)</a>
+        </p>
+    </div>
+	<iframe src="https://nsabina--soc-comply-backend.modal.run/gradio/" allowfullscreen></iframe>
+
+</body>
+</html>

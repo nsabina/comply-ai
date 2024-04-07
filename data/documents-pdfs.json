@@ -1,0 +1,38 @@
+[
+  {
+    "tags": [
+      "SOC2",
+      "AICPA",
+      "2022"
+    ],
+    "title": "2018 SOC 2 Description Criteria",
+    "url": "https://soc-comply.com/pdf/SOC2_description_criteria.pdf"
+  },
+  {
+    "tags": [
+      "ISO/IEC",
+      "27001",
+      "2022"
+    ],
+    "title": "ISO/IEC 27001 (2022)",
+    "url": "https://soc-comply.com/pdf/ISO_IEC_27001_2022.pdf"
+  },
+  {
+    "tags": [
+      "ISO/IEC",
+      "42001",
+      "2023"
+    ],
+    "title": "ISO/IEC 42001 (2023)",
+    "url": "https://soc-comply.com/pdf/ISO_IEC_42001_2023.pdf"
+  },
+  {
+    "tags": [
+      "GDPR",
+      "privacy",
+      "2016"
+    ],
+    "title": "GDPR",
+    "url": "https://soc-comply.com/pdf/CELEX_32016R0679_EN_TXT.pdf"
+  }
+]
